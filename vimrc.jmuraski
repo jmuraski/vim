@@ -1,5 +1,13 @@
+" Added for pathogen  
+call pathogen#infect()
+
+set nocompatible " This is VIM not VI
+
+filetype plugin indent on " Endable filetype-specific indenting and plugins
+
 " For solarize theme
 syntax enable
+syntax on
 set background=dark
 colorscheme solarized
 
@@ -47,4 +55,17 @@ nnoremap <C-L> :nohl<CR><C-L>
 " added to toggle background
 call togglebg#map("<F5")
 
+" Load matchit (% to bounce from do to end, etc.)
+runtime! macros/matchit.vim
 
+"ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+
+" make command tab completions act like in the shell
+set wildmenu
+set wildmode=list:longest
