@@ -55,6 +55,9 @@ nnoremap <C-L> :nohl<CR><C-L>
 " added to toggle background
 call togglebg#map("<F5")
 
+" Clipboard integration
+set clipboard=unnamed
+
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
 
